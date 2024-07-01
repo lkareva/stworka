@@ -1,0 +1,15 @@
+html {
+    --text-white: #FFFFFF;
+    --text-blue: #4777ED;
+    --bg-dark: #5E5E5E;
+    --bg-blue: #3579F5;
+    --btn-bg-light: #F4F8FF;
+    --tag-bg: #2364DB;
+    --progress-bar-bg: rgba(255, 255, 255, 0.5);
+
+}
+
+$dark: var(--bg-dark);
+$white: var(--text-white);
+$main: var(--bg-blue);
+

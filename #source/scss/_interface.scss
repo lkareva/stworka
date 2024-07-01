@@ -1,0 +1,149 @@
+*,
+html * 
+{
+  scrollbar-width: thin;
+  scrollbar-color: $main $white;
+}
+
+*::-webkit-scrollbar,
+html *::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track,
+html *::-webkit-scrollbar-track {
+  background: $white;
+}
+*::-webkit-scrollbar-thumb,
+html *::-webkit-scrollbar-thumb {
+  background-color: $main;
+  border-radius: 0px;
+}
+
+body {
+    color: $white;
+    background: $dark;
+    @include f-main;
+    font-size: 14px;
+    line-height: 20px;
+}
+.wrapper {
+	min-height: 100%;
+    min-width: 280px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+    > main {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+    }
+}
+.checklist {
+    max-width: 743px;
+    width: 100%;
+
+    &__wrap {
+        padding: 16px 20px;
+        background: $main;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media screen and (max-width: 360px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__card-progress-bar {
+    }
+
+    &__body {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    &__content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    &
+
+    &__title {
+        font-size: 12px;
+        line-height: 150%;
+        padding: 0 10px;
+        border-radius: 40px;
+        background: var(--tag-bg);
+    }
+
+    &__progress {
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 20px;
+    }
+
+    &__next-step {
+        font-size: 12px;
+        line-height: 150%;
+    }
+
+    &__btn {
+        border-radius: 6px;
+        background: var(--btn-bg-light);
+        color: var(--text-blue);
+        padding: 10px 24px;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            background: var(--tag-bg);
+            color: $white;
+        }
+    }
+}
+
+
+.progress-bar {
+    --hue: 220;
+    --holesize: 65%;
+    --track-bg: hsl(233 34% 92%);
+    
+    flex: 0 0 60px;
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-size: 20px;
+    line-height: 30px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        $white var(--progress, 0%),
+        var(--progress-bar-bg) var(--progress, 0%) 100%
+      );
+      
+      mask-image: radial-gradient(
+        transparent var(--holesize),
+        white calc(var(--holesize) + 0.5px)
+      );
+    }
+  }
